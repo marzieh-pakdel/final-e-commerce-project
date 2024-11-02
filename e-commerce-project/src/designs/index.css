@@ -1,0 +1,48 @@
+@import "./font.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    html {
+        @apply text-base;
+    }
+
+    body {
+        @apply font-Iran-Yekan;
+    }
+}
+
+::-webkit-scrollbar {  
+  width: 8px; 
+}  
+  
+::-webkit-scrollbar-track {  
+  background: none;  
+}  
+  
+::-webkit-scrollbar-thumb {  
+  background:linear-gradient(#831747,#DB2777);   
+  border-radius: 10px;  
+}  
+
+::-webkit-scrollbar-thumb:hover {  
+  background: #DB2777;  
+}
+
+
+@layer utilities {
+    .pending-badge{
+        @apply bg-info-main text-info-lighter
+    }
+
+    .success-badge{
+        @apply bg-success-main text-black
+    }
+
+    .error-badge{
+        @apply bg-error-main text-error-lighter
+    }
+}
