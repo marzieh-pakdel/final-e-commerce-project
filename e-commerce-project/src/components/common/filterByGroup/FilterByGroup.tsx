@@ -34,9 +34,9 @@ const FilterByGroup: React.FC<IFilterByGroup> = ({
     }
   }, [selectedCategories, products]);
 
-  return (
-    <div className="flex flex-col h-96  items-start">
-      <div className="bg-white text-black w-[24rem] h-[4rem] rounded-full flex justify-center items-center px-[5.2rem] py-1 mb-8">
+ return (
+    <div className="flex flex-col items-start h-96">
+      <div className="bg-white dark:bg-dark-base-menu text-black dark:text-dark-text-primary w-[24rem] h-[4rem] rounded-full flex justify-center items-center px-[5.2rem] py-1 mb-8">
         فیلتر دسته بندی
       </div>
       <div className=" h-3/4 overflow-y-auto  w-full">
