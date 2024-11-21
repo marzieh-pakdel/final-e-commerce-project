@@ -36,3 +36,8 @@ export interface IFilterByGroup {
     setFilteredProducts: React.Dispatch<React.SetStateAction<IProductCard[]>>,
     setClear: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+export interface IFilterType {
+  categories: string[],
+  price: number[],
+}
