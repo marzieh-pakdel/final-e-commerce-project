@@ -30,7 +30,7 @@ export interface IBrand {
 
 export interface IFilterByGroup {
     categories: IBrand[],
-    price: number[],
+    price: number,
     products: IProductCard[],
     isClear: boolean,
     setFilteredProducts: React.Dispatch<React.SetStateAction<IProductCard[]>>,

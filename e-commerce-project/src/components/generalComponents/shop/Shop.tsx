@@ -72,7 +72,7 @@ const Shop: React.FC = () => {
   if (isError) {
     return (
       <div className="text-red-600 w-full h-full flex justify-center items-center text-5xl">
-        <h1>Error: {error.message}</h1>
+        <h1>Error: {(error as Error).message}</h1>
       </div>
     );
   }
@@ -88,6 +88,7 @@ const Shop: React.FC = () => {
               products={products}
               isClear={clear}
               setClear={setClear}
+              price={price}
             />
             <div className="flex flex-col items-center justify-center gap-3">
               <div className="bg-white dark:bg-dark-base-menu flex text-text-primary dark:text-dark-text-primary text-[1.6rem] leading-10  font-normal w-[24rem] h-[4rem] rounded-full  justify-center items-center  py-1 mb-8">
