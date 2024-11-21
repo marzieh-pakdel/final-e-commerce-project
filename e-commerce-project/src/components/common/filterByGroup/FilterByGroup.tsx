@@ -26,7 +26,7 @@ const FilterByGroup: React.FC<IFilterByGroup> = ({
   useEffect(() => {
     if (selectedCategories.length !== 0) {
       const filteredProducts: IProductCard[] = products.filter((product) =>
-        selectedCategories.includes(product.category?._id)
+        product.category?._id &&  selectedCategories.includes(product.category._id)
       );
       setFilteredProducts(filteredProducts);
     } else {

@@ -16,7 +16,7 @@ export interface IBrand {
     image: string;
     name: string;
     price: number;
-    category?: IBrand[];
+    category?: IBrand;
     description: string;
     quantity: number;
     rating: number;
@@ -28,7 +28,11 @@ export interface IBrand {
     __v: number;
   }
 
-export interface IFilterType {
-    categories: string[],
-    price: number[]
+export interface IFilterByGroup {
+    categories: IBrand[],
+    price: number[],
+    products: IProductCard[],
+    isClear: boolean,
+    setFilteredProducts: React.Dispatch<React.SetStateAction<IProductCard[]>>,
+    setClear: React.Dispatch<React.SetStateAction<boolean>>
 }
