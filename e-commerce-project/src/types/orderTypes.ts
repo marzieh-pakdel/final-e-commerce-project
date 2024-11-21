@@ -1,6 +1,6 @@
 export interface IOrderItems {
     _id: string,
-    name: string,
+    name: string,   
     qty: number
 }
 

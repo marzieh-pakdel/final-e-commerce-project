@@ -9,7 +9,12 @@ import { NavLink } from "react-router-dom";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 interface IOrders {
-  [index: string]: string | number | boolean | JSX.Element;
+  _id: string;
+  totalPrice: number;
+  isPaid: boolean;
+  isDelivered: boolean;
+  createdAt: string | number;
+  [key: string]: string | number | boolean | JSX.Element;
 }
 
 const headers = [
@@ -26,7 +31,7 @@ const headers = [
 const Orderscopy: React.FC = () => {
   const [orders, setOrders] = useState<IOrders[]>([]);
   const [ordersTitle, setOrdersTitle] = useState<IOrders[]>([]);
-  const [isActive, setIsActive] = useState(null);
+  const [isActive, setIsActive] = useState<string | null>(null);
 
   useEffect(() => {
     fetchOrders();
@@ -76,9 +81,11 @@ const Orderscopy: React.FC = () => {
       setOrdersTitle(res);
     }
   }
-  const handleClick = (id) => {
+  
+  const handleClick = (id : string) => {
     setIsActive((prev) => (prev === id ? null : id));
   };
+
   return (
     <div className="min-h-screen pt-24 px-8 flex transition-height duration-700 ease-in-out flex-col gap-4">
       <h1 className="text-[3rem] text-primary-main">{` لیست سفارشها : ${ordersTitle.length} مورد`}</h1>
